@@ -1,34 +1,41 @@
-import React from 'react'
-import ShoppingCart from '@material-ui/icons/ShoppingCart'
-import styled from 'styled-components'
+import React, { useState } from 'react'
+import {
+  CartIcon,
+  Nav,
+  NavLink,
+  NavMenu,
+  NavBars,
+  SearchBar,
+  SearchIconWrapper,
+  StyledInputBase,
+  SearchIcon,
+} from './NavigationBarStyle'
 
 const NavigationBar = () => {
+  const { isLogin, setIsLogin } = useState(false)
   return (
-    <div>
-      <Container>
-        <Icon />
-        <span>upGrad E-Shop</span>
-      </Container>
-    </div>
+    <>
+      <Nav>
+        <NavLink to='/'>
+          <CartIcon />
+          <span>upGrad E-Shop</span>
+        </NavLink>
+        {isLogin ? <NavBars>Search Box</NavBars> : null}
+        <NavBars>
+          <SearchBar>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase placeholder='Search...' />
+          </SearchBar>
+        </NavBars>
+        <NavMenu>
+          <NavLink to='/login'>Log In</NavLink>
+          <NavLink to='/signup'>Sign Up</NavLink>
+        </NavMenu>
+      </Nav>
+    </>
   )
 }
 
 export default NavigationBar
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 3rem;
-  background-color: #3f51b5;
-  width: 100vw;
-  height: 4vh;
-  span {
-    color: white;
-  }
-`
-
-const Icon = styled(ShoppingCart)`
-  color: white;
-`
