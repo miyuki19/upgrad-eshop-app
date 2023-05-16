@@ -1,18 +1,8 @@
-import React, { useState } from 'react'
-import {
-  CartIcon,
-  Nav,
-  NavLink,
-  NavMenu,
-  NavBars,
-  SearchBar,
-  SearchIconWrapper,
-  StyledInputBase,
-  SearchIcon,
-} from './NavigationBarStyle'
+import React from 'react'
+import { CartIcon, Nav, NavLink, NavMenu, NavBars } from './NavigationBarStyle'
+import SearchBar from './SearchBar'
 
 const NavigationBar = () => {
-  const { isLogin, setIsLogin } = useState(false)
   return (
     <>
       <Nav>
@@ -20,14 +10,8 @@ const NavigationBar = () => {
           <CartIcon />
           <span>upGrad E-Shop</span>
         </NavLink>
-        {isLogin ? <NavBars>Search Box</NavBars> : null}
         <NavBars>
-          <SearchBar>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase placeholder='Search...' />
-          </SearchBar>
+          <SearchBar />
         </NavBars>
         <NavMenu>
           <NavLink to='/login'>Log In</NavLink>

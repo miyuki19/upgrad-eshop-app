@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 import { NavLink as Link } from 'react-router-dom'
-import ShoppingCart from '@material-ui/icons/ShoppingCart'
-import { InputBase } from '@material-ui/core'
-import Search from '@material-ui/icons/Search'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
-export const CartIcon = styled(ShoppingCart)`
-  color: white;
-`
-export const SearchIcon = styled(Search)`
+export const CartIcon = styled(ShoppingCartIcon)`
   color: white;
 `
 
@@ -54,11 +49,4 @@ export const SearchIconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-export const StyledInputBase = styled(InputBase)`
-  background: transparent;
-  width: 100%;
-  padding: 0 2rem;
-  border-radius: 3px;
 `
