@@ -11,6 +11,7 @@ const SignIn = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
   }
+
   return (
     <>
       <NavigationBar />
@@ -96,12 +97,16 @@ const FormContainer = styled.div`
       transition: 0.3s ease-in-out;
     }
     span {
+      margin-left: 2px;
       text-transform: capitalize;
       font-weight: 500;
       a {
         color: #4f8afb;
         font-weight: normal;
         text-decoration: none;
+      }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
